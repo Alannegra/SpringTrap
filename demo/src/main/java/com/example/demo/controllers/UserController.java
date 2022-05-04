@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.model.User;
+import com.example.demo.repositories.UserDAO;
 import com.example.demo.repositories.UserRepository;
 
 import com.example.demo.service.UserService;
@@ -16,22 +17,24 @@ public class UserController {
 
     UserRepository userRepository;
     //private final UserService userService;
+    UserDAO userDao;
 
     @Autowired
-    public UserController(UserDao userDao) {
-        this.userDao = userRepository;
+    public UserController(UserDAO userDao) {
+        this.userDao = userDao;
     }
 
     public List<User> getAllUsers() {
-        return  userRepository.findAll();
+        return  userDao.findAll();
     }
 
-    public void addUser(User user){userRepository.add(user);}
+    public void addUser(User user){userDao.save(user);}
 
-    public User getUser(String id){
-        return userRepository.findById(Integer.parseInt(id));
+    public User getUser(int id){
+        Optional<User> user = userDao.findById(id);
+        return user.get();
     }
-    public void deleteUser(String id){
-        userRepository.deleteById(Integer.parseInt(id));
+    public void deleteUser(int id){
+        userDao.deleteById(id);
     }
 }

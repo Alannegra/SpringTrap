@@ -27,7 +27,7 @@ public class UserResource {
     }
 
     @GetMapping("{id}")
-    public User user(@PathVariable("id") String id){
+    public User user(@PathVariable("id") int id){
         return userController.getUser(id);
     }
     @PostMapping
@@ -35,11 +35,11 @@ public class UserResource {
         userController.addUser(user);
     }
     @DeleteMapping("{id}")
-    public void deleteUser(@PathVariable("id") String id){
+    public void deleteUser(@PathVariable("id") int id){
         userController.deleteUser(id);
     }
     @GetMapping("{id}/email")
-    public Map<String, String> email(@PathVariable("id") String id){
+    public Map<String, String> email(@PathVariable("id") int id){
         return Collections.singletonMap("email",userController.getUser(id).getEmail());
     }
 }
