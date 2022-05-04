@@ -22,11 +22,11 @@ public class User {
     @Column
     private String fullName;
 
-    /*public User(int id, String email, String password, String fullName) {
+    public User(int id, String email, String password, String fullName) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.fullName = fullName;
-    }*/
+    }
 
 }

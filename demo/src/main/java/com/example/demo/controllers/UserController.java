@@ -15,11 +15,11 @@ public class UserController {
 
 
     UserRepository userRepository;
-    private final UserService userService;
+    //private final UserService userService;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserDao userDao) {
+        this.userDao = userRepository;
     }
 
     public List<User> getAllUsers() {

@@ -15,18 +15,11 @@ public class UserRepository {
     List<User> llistaUsers = new ArrayList<>();
 
     public UserRepository() {
-
         llistaUsers.add(new User(1,"1","1","1"));
         llistaUsers.add(new User(2,"1","1","Alan"));
-
-
     }
-
-
-
-
-
     public List<User> findAll() {
+
         return llistaUsers;
     }
 
@@ -49,7 +42,5 @@ public class UserRepository {
         User user = findById(id);
         llistaUsers.remove(user);
     }
-
-
 
 }

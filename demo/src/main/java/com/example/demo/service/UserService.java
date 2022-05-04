@@ -12,7 +12,7 @@ import java.util.UUID;
 @Service
 public class UserService {
 
-    private final UserDAO userDAO;
+   /* private final UserDAO userDAO;
 
     public List<User> findAll(){
         return userDAO.findAll();
@@ -29,7 +29,7 @@ public class UserService {
     }
     public boolean existById(UUID uuid) {
         return UserDAO.existsById(uuid);
-    }
+    }*/
 
 
 }
